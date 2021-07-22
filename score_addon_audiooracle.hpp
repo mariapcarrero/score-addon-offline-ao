@@ -11,15 +11,15 @@
 #include <utility>
 #include <vector>
 
-class score_addon_my_offline_process final
+class score_addon_audiooracle final
     : public score::Plugin_QtInterface
-    , public score::FactoryInterface_QtInterface
+        , public score::FactoryInterface_QtInterface
 {
-  SCORE_PLUGIN_METADATA(1, "00000000-0000-0000-0000-000000000000")
+SCORE_PLUGIN_METADATA(1, "1f183df2-8686-4e69-8a63-62a36db7ec14")
 
 public:
-  score_addon_my_offline_process();
-  ~score_addon_my_offline_process() override;
+  score_addon_audiooracle();
+  ~score_addon_audiooracle() override;
 
 private:
   std::vector<std::unique_ptr<score::InterfaceBase>> factories(

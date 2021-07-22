@@ -1,4 +1,4 @@
-#include "MyOfflineProcessFactory.hpp"
+#include "AudioOracleFactory.hpp"
 
 #include <Media/Sound/SoundModel.hpp>
 #include <Media/Commands/ChangeAudioFile.hpp>
@@ -12,9 +12,9 @@
 
 #include <QDir>
 
-namespace MyOfflineProcess
+namespace AudioOracle
 {
-QString GainDoubler::title() const noexcept 
+QString GainDoubler::title() const noexcept
 {
   return QObject::tr("GainDoubler");
 }
@@ -25,7 +25,7 @@ UuidKey<Process::ProcessModel> GainDoubler::target() const noexcept {
 
 void GainDoubler::apply(
     Process::ProcessModel& proc,
-    const score::DocumentContext& ctx) 
+    const score::DocumentContext& ctx)
 
 {
   auto& sound = safe_cast<Media::Sound::ProcessModel&>(proc);

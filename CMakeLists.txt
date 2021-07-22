@@ -11,11 +11,11 @@ score_common_setup()
 
 # Creation of the library
 add_library(score_addon_my_offline_process
-  MyOfflineProcess/MyOfflineProcessFactory.cpp
-  MyOfflineProcess/MyOfflineProcessFactory.hpp
+        AudioOracle/AudioOracleFactory.cpp
+        AudioOracle/AudioOracleFactory.hpp
 
-  score_addon_my_offline_process.hpp
-  score_addon_my_offline_process.cpp
+        score_addon_audiooracle.hpp
+        score_addon_audiooracle.cpp
 )
 
 # Link

@@ -1,6 +1,4 @@
-#!/bin/bash
-
-shopt -s globstar
+#!/bin/zsh
 
 # Check script options
 if [[ "$#" -ne 1 ]]; then
@@ -25,19 +23,13 @@ if [[ ! -x "$RENAME" ]] ; then
   RENAME=$(command -v rename)
 fi
 
-RENAME_KIND=$($RENAME --help | grep -i PERLEXPR)
-if [[ "$RENAME_KIND" == "" ]]; then
-  echo "Install perl-rename (sometimes called just 'rename')"
-  exit 1
-fi
-
 SED=/usr/bin/sed
 if [[ "$OSTYPE" == "darwin"* ]]; then
   if ! [[ -x "$(command -v gsed)" ]]; then
     echo "Install gnu-sed"
     exit 1
   fi
-  SED=/usr/bin/gsed
+  SED=/usr/local/opt/gnu-sed/libexec/gnubin/sed
 fi
 
 
@@ -49,9 +41,9 @@ ADDON_DIR="$PWD"
 mv "MyOfflineProcess" "$ADDON"
 $RENAME "s/my_offline_process/$ADDON_LC/" **/*.{hpp,cpp,txt}
 $RENAME "s/MyOfflineProcess/$ADDON/" **/*.{hpp,cpp,txt}
-$SED -i "s/my_offline_process/$ADDON_LC/g" **/*.{hpp,cpp,txt}
-$SED -i "s/MyOfflineProcess/$ADDON/g" **/*.{hpp,cpp,txt} release.sh
-$SED -i "s/my-offline-process/$ADDON_LC_DASHES/g" **/*.{hpp,cpp,txt} release.sh
+$SED -i "s/my_offline_process/$ADDON_LC/g" **/*.{hpp,cpp}
+$SED -i "s/MyOfflineProcess/$ADDON/g" **/*.{hpp,cpp} release.sh
+$SED -i "s/my-offline-process/$ADDON_LC_DASHES/g" **/*.{hpp,cpp} release.sh
 
 echo -e "# $ADDON\nA new and wonderful [ossia score](https://ossia.io) add-on" > README.md
 
