@@ -1,11 +1,11 @@
 {
   "src": "<url to the .zip file created by the release script>",
-  "name": "My Offline Process",
-  "raw_name": "score-addon-my-offline-process",
+  "name": "Audio Oracle",
+  "raw_name": "score-addon-audiooracle",
   "version": "1.0",
   "kind": "addon",
-  "short": "Test offline process add-on",
-  "long": "This addon provides an example offline process",
+  "short": "Audio Oracle add-on",
+  "long": "This addon provides an Audio Oracle example",
   "small": "https://raw.githubusercontent.com/OSSIA/score-addon-tutorial/master/Deployment/icon.png",
   "key": "7457AB8A-5CAC-40C4-8001-0A30791767BB"
 }
