@@ -16,7 +16,7 @@ namespace AudioOracle
 {
 QString GainDoubler::title() const noexcept
 {
-  return QObject::tr("GainDoubler");
+  return QObject::tr("Audio Oracle");
 }
 
 UuidKey<Process::ProcessModel> GainDoubler::target() const noexcept {
